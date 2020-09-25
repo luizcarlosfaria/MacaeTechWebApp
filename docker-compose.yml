@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  macaetechwebapp:
+    image: ${DOCKER_REGISTRY-}macaetechwebapp
+    environment:
+      - MinhaApp__Connectionstring=TesteCompose      
+    build:
+      context: .
+      dockerfile: MacaeTechWebApp/Dockerfile
