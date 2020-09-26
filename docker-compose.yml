@@ -15,3 +15,9 @@ services:
         delay: 10s
       restart_policy:
         condition: on-failure
+    networks:
+      - lb
+
+networks:
+    lb:
+      external: true
