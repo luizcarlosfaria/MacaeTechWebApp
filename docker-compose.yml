@@ -7,17 +7,4 @@ services:
       - MinhaApp__Connectionstring=TesteCompose      
     build:
       context: .
-      dockerfile: MacaeTechWebApp/Dockerfile
-    deploy:
-      replicas: 6     
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-    networks:
-      - lb
-
-networks:
-    lb:
-      external: true
+      dockerfile: MacaeTechWebApp/Dockerfile   

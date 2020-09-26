@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  macaetechwebapp:
+    image: luizcarlosfaria/appmacaetech
+    environment:
+      - MinhaApp__Connectionstring=TesteCompose      
+    deploy:
+      replicas: 6     
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    networks:
+      - lb
+
+networks:
+    lb:
+      external: true
